@@ -1,0 +1,42 @@
+﻿@page "/customer"
+@using BlazorApp3.Data
+
+<PageTitle>vernagir </PageTitle>
+
+<MudTable Elevation="10" Items="CustomerList" T="Customer"  @bind-customer="Customer">
+	<ToolBarContent>
+		
+		<MudSpacer />
+		<MudButton Variant="Variant.Filled" DropShadow="false" Color="Color.Success" OnClick="ButtonAddClickAsync">Avelcnel</MudButton>
+
+	</ToolBarContent>
+	<HeaderContent>
+		<MudTh>Id</MudTh>
+
+		<MudTh>
+			<MudTableSortLabel SortBy="new Func<Customer,object>(x=>x.FirstName)" InitialDirection="SortDirection.Ascending">FirstName</MudTableSortLabel>
+		</MudTh>
+
+		<MudTh>
+			<MudTableSortLabel SortBy="new Func<Customer,object>(x=>x.LastName)">Last Name</MudTableSortLabel>
+		</MudTh>
+
+		<MudTh>
+			<MudTableSortLabel SortBy="new Func<Customer,object>(x=>x.PhoneNumber)">Phone Number</MudTableSortLabel>
+		</MudTh>
+
+		<MudTh>
+			Action
+		</MudTh>
+	</HeaderContent>
+	<RowTemplate>
+		<MudTd DataLabel="Id">@context.Id</MudTd>
+		<MudTd DataLabel="FirstName">@context.FirstName</MudTd>
+		<MudTd DataLabel="LastName">@context.LastName</MudTd>
+		<MudTd DataLabel="PhoneNumber">@context.PhoneNumber</MudTd>
+		
+	</RowTemplate>
+	<PagerContent>
+		<MudTablePager PageSizeOptions="new int[]{10,20,50,100,int.MaxValue}" />
+	</PagerContent>
+</MudTable>

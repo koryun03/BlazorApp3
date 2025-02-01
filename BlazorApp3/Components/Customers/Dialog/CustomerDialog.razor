@@ -1,0 +1,17 @@
+﻿
+<MudForm>
+	<MudDialog>
+		<TitleContent>
+		</TitleContent>
+
+		<DialogContent>
+			<MudTextField @bind-Value="Customer.FirstName" Label="First Name" Variant="Variant.Filled" Margin="Margin.Normal"></MudTextField>
+			<MudTextField @bind-Value="Customer.LastName" Label="Last Name" Variant="Variant.Filled" Margin="Margin.Normal"></MudTextField>
+			<MudTextField @bind-Value="Customer.PhoneNumber" Label="Phone number" Variant="Variant.Filled" Margin="Margin.Normal"></MudTextField>
+		</DialogContent>
+		<DialogActions>
+			@* <MudButton Variant="Variant.Filled" OnClick="@(async()=>await ActionButtonAsync(Customer))" Color="Color.Success">@LabelButton</MudButton> *@
+			<MudButton Variant="Variant.Filled" OnClick="@(async()=>await ActionButtonAsync(Customer))" Color="Color.Success">Avelcnel</MudButton>
+		</DialogActions>
+	</MudDialog>
+</MudForm>

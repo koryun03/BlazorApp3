@@ -1,0 +1,32 @@
+﻿@using BlazorApp3.Components.Customers;
+@inherits LayoutComponentBase
+
+@* <MudThemeProvider @bind-IsDarkMode="IsDarkMode" Theme="Theme" /> *@
+ <MudThemeProvider/> 
+
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <div class="page">
+        @* <MudAppBar eElevation="1" Dense="@Dense"> *@
+        <MudAppBar eElevation="1" >
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@DrawerToggle" />
+            <MudSpacer />
+        </MudAppBar>
+
+        <MudDrawer @bind-Open="@DrawerOpen" Fixed="true" Elevation="2" Variant="@DrawerVariant.Mini" OpenMiniOnHover="false" Overlay="false" ClipMode="ClipMode" Breakpoint="@Breakpoint">
+            <NavMenu />
+        </MudDrawer>
+
+        <MudMainContent>
+            <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+                <ErrorBoundary>
+                    @Body
+                </ErrorBoundary>
+            </MudContainer>
+        </MudMainContent>
+
+    </div>
+</MudLayout>
